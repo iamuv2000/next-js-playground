@@ -18,7 +18,38 @@ Anything within this folder is accessible to the outside world through the domai
 ## api folder
 Each function must return some value and cannot return a jsx component. This behaves like express in Node
 
-## Dynamic routing
+## useRouter
+
+```
+import {useRouter} from 'next/router';
+const router = useRouter();
+```
+
+### Push
+This makes the back button go back to the page it came from
+```
+router.push('/')
+```
+
+### replace
+The new page replaces the current page, hence the back button will not take you to the previous page
+```
+router.replace('/')
+```
+
+## Catch all routes
+```
+[...name].jsx
+```
+- The file with the about name will catch all the routes, except the base route.
+- To catch the base route:
+```
+[[...name]].jsx
+```
+
+## Custom 404 Page
+Add a **404.tsx** page in the root of pages directory.
+
 
 
 <hr/>
